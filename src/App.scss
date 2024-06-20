@@ -1,0 +1,24 @@
+@import './common/colors.scss';
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans' ,sans-serif;
+}
+
+body {
+    background: $primary-color;
+}
+
+a {
+    text-decoration: none;
+}
+
+input {
+    outline: none;
+}
+
+.container {
+    margin: 0 40px;
+}
