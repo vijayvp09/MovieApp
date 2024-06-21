@@ -31,6 +31,9 @@ const MovieListing = () => {
         );
     return(
         <div className='movies-wrapper'>
+            <div className="carousel">
+                
+            </div>
             <div className='movie-list'>
                 <h2>Movies</h2>
                 <div className="movie-container">{renderMovies}</div>

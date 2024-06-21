@@ -2,6 +2,9 @@
 
 .card-item {
     background: $secondary-color;
+    border-radius: 5px;
+    box-shadow: 3px 3px 5px rgb(107, 106, 106);
+    overflow: hidden;
     cursor: pointer;
     transition: all 0.3s;
 

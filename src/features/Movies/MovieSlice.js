@@ -3,17 +3,15 @@ import movieApi from '../../common/Api/movieApi'
 import { APIKey } from '../../common/Api/MovieApiKey'
 
 export const fetchAsyncMovies = createAsyncThunk('movies/fetchAsyncMovies', 
-    async () => {
-        const movieText = 'avengers';
-        const response = await movieApi.get(`?apiKey=${APIKey}&s=${movieText}&type=movie`);
+    async (term) => {
+        const response = await movieApi.get(`?apiKey=${APIKey}&s=${term}&type=movie` );
         return response.data;
     }
 );
 
 export const fetchAsyncShows = createAsyncThunk('movies/fetchAsyncShows', 
-  async () => {
-    const showsText = 'break'
-    const response = await movieApi.get(`?apiKey=${APIKey}&s=${showsText}&type=series`)
+  async (term) => {
+    const response = await movieApi.get(`?apiKey=${APIKey}&s=${term}&type=series`)
     return response.data;
   }
 );
@@ -30,7 +28,8 @@ const initialState = {
     error: null,
     loading: false,
     shows: {},
-    movieOrShow: {}
+    movieOrShow: {},
+    
 }
 
 const movieSlice = createSlice({
@@ -42,7 +41,7 @@ const movieSlice = createSlice({
         },
         removeShowOrMovie: (state, action) => {
           state.movieOrShow = {};
-        }
+        },
     },
     extraReducers: (builder) => {
         builder
